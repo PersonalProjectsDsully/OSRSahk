@@ -1,0 +1,333 @@
+sleep2(){
+    Random,slp1, 150, 300   ;just inbetween actions clicks for herbs/dropping
+    return slp1
+    }
+sleep3(){
+    Random,slp1, 500, 1000  ;banking interface timer
+    return slp1
+    }
+sleep4(){
+    Random,slp1, 500, 600   ;banking interface timer
+    return slp1
+    }
+sleep5(){
+    Random,slp1, 16400, 17000   ;time for stringing and unf potion making
+    return slp1
+    }
+sleep6(){
+    Random,slp1, 1000, 1300  ; waiting for int to pop up
+    return slp1
+    }
+sleep7(){
+    Random,slp1, 8800, 9500  ; unfinished potion time
+    return slp1
+    }
+sleep1(){
+    Random,slp1, 500, 600  ;banking interface timer
+    return slp1
+}
+sleep8(){
+    random, x, 4500, 5000
+    return x
+}
+col1(){
+    random, var1, 567, 597
+    return var1
+    }
+col2(){ 
+    random, var1,609, 641
+    return var1
+    }
+col3(){ 
+    random, var1,651, 681
+    return var1
+    }
+col4(){ 
+    random, var1,704, 718
+    return var1
+    }
+row1(){ 
+    random, var1,244, 273
+    return var1
+    }
+row2(){
+    random, var1,278, 307
+    return var1
+    }
+row3(){
+    random, var1,315, 341
+    return var1
+    }
+row4(){
+    random, var1,350, 379
+    return var1
+    }
+row5(){
+    random, var1,386, 415
+    return var1
+    }
+row6(){
+    random, var1,423, 453
+    return var1
+    }
+row7(){
+    random, var1,464, 481
+    return var1
+    }
+26x(){
+    random, var1,661, 679
+    return var1
+    }
+26y(){
+    random, var1,466, 483
+    return var1
+    }
+bankitem2x(){
+    random, var1, 127, 152
+    return var1
+    }
+bankitem2y(){
+    random, var1, 115, 143
+    return var1
+    }
+bankingx1(){
+    random, var1, 108, 77   ;first item in bank tab
+    return var1
+    
+    }
+bankingy1(){
+    random, var1, 140, 115  ;first item in bank tab
+    return var1
+    }
+bankery(){
+    random, var1, 203, 303
+    return var1
+    }
+bankerx(){
+    random, var1, 459, 519
+    return var1
+    }
+depositx(){
+    random, var1, 432, 461
+    return var1
+    }
+deposity(){
+    random, var1, 329, 354
+    return var1
+    }
+
+closeintx(){
+    random, var1, 480, 501
+    return var1
+    }
+closeinty(){
+    random, var1, 42, 63
+    return var1
+    }
+chatactioncentx(){
+    random, var1, 215, 313
+    return var1
+    }
+chatactioncenty(){
+    random, var1, 420, 493
+    return var1
+    }
+leftrockx(){
+    random, var1, 123, 208
+    return var1
+    }
+leftrocky(){
+    random, var1, 143, 218
+    return var1
+    }
+toprockx(){
+    random, var1, 234, 317
+    return var1
+    }
+toprocky(){
+    random, var1, 36, 105 
+    return var1
+    }
+rightrockx(){
+    random, var1, 349, 428 
+    return var1
+    }
+rightrocky(){
+    random, var1, 161, 222
+    return var1
+    }
+randommousespeed(){
+    random, mousespeed, .5, .7
+    }
+dropping28(){
+        movemouse(col1(), row1())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row3())  
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row7())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row7())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row3())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row1())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row1())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row3())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row7())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row7())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row3())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row1())
+        Sleep,sleep2()
+        click    
+
+    }
+dropping27(){
+        send {shift down}
+        movemouse(col1(), row1())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row3())  
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col1(), row7())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row7())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row3())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col2(), row1())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row1())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row3())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col3(), row7())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row6())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row5())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row4())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row3())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row2())
+        Sleep,sleep2()
+        click
+        movemouse(col4(), row1())
+        Sleep,sleep2()
+        click    
+        send {shift up}
+    }
