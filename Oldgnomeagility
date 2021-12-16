@@ -1,0 +1,115 @@
+#NoEnv
+#include C:\Users\your username here\Desktop\AHK\WindHumanMouse.ahk
+#SingleInstance
+SetMouseDelay -1
+?::
+Loop{
+    movemouse(logbalancex(), logbalancey())
+    sleep, sleep3()
+    click
+    sleep, sleep7()
+    movemouse(obstaclenetx(), obstaclenety())
+    sleep, sleep3()
+    click
+    sleep, sleep1()
+    movemouse(treebranchx(), treebranchy())
+    sleep, sleep3()
+    click
+    sleep, sleep2()
+    movemouse(balancingropex(), balancingropey())
+    sleep, sleep3()
+    click
+    sleep, sleep7()
+    movemouse(treebranch2x(), treebranch2y())
+    sleep, sleep3()
+    click
+    sleep, sleep4()
+    sleep, sleep3()
+    movemouse(obstaclenet2x(), obstaclenet2y())
+    sleep, sleep3()
+    click
+    sleep, sleep1()
+    sleep, sleep3()
+    movemouse(obstaclepipex(), obstaclepipey())
+    sleep, sleep3()
+    click
+    sleep, sleep7()
+}
+>::pause
+/::exitapp
+logbalancex(){
+    random,x, 154,161
+    return x
+}
+logbalancey(){
+    random,x, 216,222
+    return x
+}
+sleep7(){
+    Random,slp1, 8800, 9500  ; unfinished potion time
+    return slp1
+    }
+sleep3(){
+    Random,slp1, 500, 1000  ;banking interface timer
+    return slp1
+    }
+sleep2(){
+    random, x, 1500, 2000
+    return x
+}
+obstaclenetx(){
+    random, x, 249, 265
+    return x
+}
+obstaclenety(){
+    random, x, 245, 251
+    return x
+}
+sleep4(){
+    random, x, 2000, 2500
+    return x
+}
+sleep1(){
+    random, x, 4500, 5000
+    return x   
+}
+treebranchx(){
+    random, x, 261, 265
+    return x
+}
+treebranchy(){
+    random, x, 210, 219
+    return x
+}
+balancingropex(){
+    random, x, 311, 320
+    return x
+}
+balancingropey(){
+    random, x, 197, 206
+    return x
+}
+treebranch2x(){
+    random, x, 293, 302
+    return x
+}
+treebranch2y(){
+    random, x, 208, 214
+    return x
+}
+obstaclenet2x(){
+    random, x, 243, 259
+    return x
+}
+obstaclenet2y(){
+    random, x, 129, 136
+    return x
+}
+obstaclepipex(){
+    random, x, 246, 257
+    return x
+}
+obstaclepipey(){
+    random, x, 148, 165
+    return x
+}
