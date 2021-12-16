@@ -1,0 +1,1038 @@
+#NoEnv
+#include C:\Users\your username\Desktop\AHK\test.ahk
+#include C:\Users\your username\Desktop\AHK\WindHumanMouse.ahk
+;#include C:\Users\your username\Desktop\AHK\guibuild.ahk
+#SingleInstance
+SetMouseDelay -1
+?::
+didntpickuprandomitems()
+loop{
+    banktochop()
+    cutting()
+}
+>::pause
+/::exitapp
+game(){
+    startgameactive()
+    cutting()
+}
+banktochop(){
+    pixelsearch, px, py, 263, 199, 270, 207, 0xFFFF00, 3, fast, rgb
+    if(errorlevel=1){
+        msgbox "Not in right spot"
+        exitapp
+    }
+    tooltip, "banktochop() line 25", 0, 0
+    sleep, sleep3()
+    movemouse(goingtodoorsx(), goingtodoorsy())
+    sleep, sleep3()
+    click
+    idlewalk()
+    movemouse(doorsx(), doorsy())
+    sleep, sleep3()
+    click
+    idlewalk()
+    sleep, sleep1()
+    pixelsearch, px, py, 110, 58, 118, 71,0xCC0000, 3, fast, rgb
+    if(errorlevel=0){
+    loop{
+        tooltip, "banktochop() line 39", 0, 0
+        if(errorlevel=0){
+            pixelsearch, px, py, 2, 27, 13, 39, 0xff0000
+            if(errorlevel=0){
+                break
+            }
+            else{
+                sleep, sleep3()
+            }
+        }
+        else{
+            break
+        }
+    }}
+    startgameactive()
+    loop{
+        tooltip, "banktochop() line 55", 0, 0
+        pixelsearch, px, py, 506, 43, 513, 51, 0x0000ff, 3, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        if(errorlevel=1){
+            pixelsearch, px, py, 16, 37, 333, 208, 0x0000ff, 3, fast, rgb
+            random, x, -3, 3
+            random, y, -3, 3
+            sleep, sleep3()
+            movemouse(px+x, py+y)
+            sleep, sleep3()
+            click
+            idlewalk()
+            sleep, sleep3()
+            sleep, sleep3()
+            pixelsearch, px, py, 506, 43, 513, 51, 0x00ff00, 3, fast, rgb
+            if(errorlevel=0){
+                break
+            }
+            else{            
+                pixelsearch, px, py, 8, 30, 498, 226, 0x0000ff, 3, fast, rgb
+                random, x, -3, 3
+                random, y, -3, 3
+                sleep, sleep3()
+                movemouse(px+x, py+y)
+                sleep, sleep3()
+                click
+                idlewalk()
+                sleep, sleep3()
+                sleep, sleep3()
+                pixelsearch, px, py, 506, 43, 513, 51, 0x00ff00, 3, fast, rgb
+                if(errorlevel=0){
+                    break
+                }
+            }
+        }
+        else{
+            sleep, sleep3()
+        }
+    }
+    sleep, sleep6()
+    return
+}
+findspot(){
+    loop{
+        tooltip, "findspot() line 101", 0, 0
+        pixelsearch, x, y, 7, 29, 522, 365, 0x00FF00, 3, fast, rgb
+        sleep, sleep6()
+        random, px, -5, 5
+        random, py, -5, 5
+        movemouse(x+px,y+py)
+        sleep, sleep3()
+        click
+        sleep, sleep6()
+        idlewalk()
+        sleep, sleep3()
+        loop{
+            pixelsearch, px, py, 260, 196, 268, 205, 0x00FF00, 3, fast, rgb
+            if(errorlevel=0){
+                break 2
+            }
+            else{
+                sleep, sleep3()
+            }
+        }
+    }
+    return
+}
+cutting(){
+    pixelsearch, px, py, 235, 187, 258, 212, 0xFF00FF, 3, fast, rgb
+    if(errorlevel=0){
+        loop{
+            tooltip, "cutting() line 128", 0, 0
+            health()
+            pixelsearch, px, py, 745, 46, 770, 68, 0xFF0000, 3, fast, rgb
+            if(errorlevel=0){
+                pixelsearch, px, py, 572, 465, 594, 482, 0xFF0000, 3, fast, rgb
+                if(errorlevel=0){
+                    fletch()
+                }
+            }
+            pixelsearch, px, py, 561, 236, 729, 492, 0x00FF00, 3, fast, rgb
+            if(errorlevel=0){
+                    
+                    dumplogs() ;move back to starting area
+                    startingroom() ; goes to the bank too and does banking
+                    break
+                }
+            pixelsearch, px, py, 745, 46, 770, 68, 0xFF0000, 3, fast, rgb
+            if(errorlevel=0){
+                pixelsearch, px, py, 572, 465, 594, 482, 0xff0000, 3, fast, rgb
+                if(errorlevel=1){
+                    pixelsearch, px, py, 572, 465, 594, 482, 0x00ff00, 3, fast, rgb
+                    if(errorlevel=1){
+                        cuttin1()
+                    }
+                }
+            }
+            else{
+                sleep, sleep3()
+            }
+            pixelsearch, px, py, 2, 26, 11, 39, 0xff0000, 3, fast, rgb
+            if(errorlevel=0){
+                pixelsearch, px, py, 239, 192, 259, 207, 0xff00ff, 3, fast, rgb
+                if(errorlevel=0){
+                    waittillnextgame()
+                }
+            }
+            }
+        }
+        
+    return 
+}
+gameisactive(){
+    loop{
+        tooltip, "gameisactive() line 171", 0, 0
+        pixelsearch, px, py, 3, 25, 14, 40, 0x00FF00, 3, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        else{
+            sleep, sleep3()
+        }
+    }
+    return
+}
+fletch(){
+    tooltip, "fletch() line 183", 0, 0
+    loop{
+        pixelsearch, px, py, 561, 236, 729, 492, 0xFF0000, 3, fast, rgb
+        if(errorlevel=1){
+            
+            break
+        }
+        else{
+            movemouse(knifex(), knifey())
+            sleep, sleep3()
+            click
+            sleep, sleep3()
+            pixelsearch, x, y, 562, 236, 726, 494, 0xFF0000, 3, fast, rgb
+            random, px, -10, 10
+            random, py, -10, 10
+            sleep, sleep3()
+            movemouse(x+px, y+py)
+            sleep, sleep3()
+            click
+            sleep, sleep3()
+            movemouse(offscreenx(), offscreeny())
+            sleep, sleep3()
+            loop{
+                pixelsearch, px, py, 750, 49, 767, 64, 0xFF0000, 3, fast, rgb
+                if(errorlevel=0){
+                
+                    break
+                    }
+                else{
+                    sleep, sleep3()
+                    health()
+                    pixelsearch, px, py, 565, 463, 597, 489, 0x00ff00, 3, fast, rgb
+                    if(errorlevel=0){
+                        
+                        break
+                    }
+                }
+            }
+        }
+    }
+   
+    return
+}
+startgameactive(){
+    loop{
+        tooltip, "startgameactive() line 228", 0, 0
+        pixelsearch, px, py, 3, 25, 14, 40, 0x00FF00, 3, fast, rgb
+        if (errorlevel=0){
+            break
+        }
+        else{
+            sleep, sleep3()
+        }   
+    }
+    return
+}
+
+cuttin1(){
+    tooltip, "cuttin1() line 241", 0, 0
+    loop{
+        pixelsearch, px, py, 572, 460, 590, 484, 0xff0000, 3, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        else{
+            sleep, sleep2()
+            health()
+            pixelsearch, px, py, 729, 29, 773, 113, 0xff0000, 3, fast, rgb
+            if(errorlevel=0){
+                movemouse(brumax(), brumay())
+                sleep, sleep3()
+                click
+                sleep, sleep3()
+                sleep, sleep3()
+            }
+       }
+    }
+    return
+}
+health(){
+    tooltip, "health() line 263", 0, 0
+    pixelsearch, px, py, 748, 126, 771, 143, 0x0000FF, 3, fast, rgb
+    if(errorlevel=0){
+        pixelsearch, x, y, 566, 238, 730, 491, 0xFFE700, 3, fast, rgb
+            if(errorlevel=0){
+            random, px, -5, 5
+            random, py, -5, 5
+            movemouse(x+px, y+py)
+            sleep, sleep3()
+            click
+            sleep, sleep3()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+            return
+            }
+            if(errorlevel=1){
+                return
+            }
+        return
+    }
+    else{
+        return
+    }
+}
+dumplogs(){
+            tooltip, "dumplogs() line 292", 0, 0
+            pixelsearch, px, py, 224, 70, 268, 190, 0x00ff00, 3, fast, rgb
+            sleep, sleep3()
+            random, x, -5, 5
+            random, y, -5, 5
+            movemouse(px+x, py+y)
+            sleep, sleep4()
+            click
+            sleep, sleep2()
+            sleep, sleep8()
+                sleep, sleep3()
+            loop{
+                tooltip, "dumplogs() line 304", 0, 0
+                    pixelsearch, px, py, 238, 72, 292, 198, 0x00ff00, 3, fast, rgb
+                    if(errorlevel=0){
+                        pixelsearch, px, py,238, 72, 292, 198, 0x00ff00, 3, fast, rgb
+                        sleep, sleep3()
+                        random, x, -5, 5
+                        random, y, -5, 5
+                        movemouse(px+x, py+y)
+                        sleep, sleep4()
+                        click
+                        sleep, sleep2()
+                        sleep, sleep8()
+                sleep, sleep3()y
+                        }
+                    else{
+                        sleep, sleep3()
+                    
+                    }                    
+                
+                pixelsearch, px, py, 238, 280, 304, 286, 0x0000ff, 3, fast, rgb
+                if(errorlevel=0){
+                
+                    break
+                }
+                
+            }
+            sleep, sleep3()
+            tooltip, "dumplogs() line 331", 0, 0
+            dumpinglogfunction100()
+            return
+            loop{
+                sleep, sleep8()
+                sleep, sleep3()
+                pixelsearch, px, py, 250, 201, 291, 277, 0xFF00FF, 3, fast, rgb
+                if(errorlevel=0){
+                tooltip, "dumplogs() line 339", 0, 0
+                    pixelsearch, px, py, 218, 32, 386, 196, 0x00ff00, 3, fast, rgb
+                    if(errorlevel=0){
+                        pixelsearch, px, py, 218, 32, 386, 196, 0x00ff00, 3, fast, rgb
+                        sleep, sleep3()
+                        random, x, -5, 5
+                        random, y, -5, 5
+                        movemouse(px+x, py+y)
+                        sleep, sleep4()
+                        click
+                        sleep, sleep2()
+                        }
+                    else{
+                        sleep, sleep3()
+                    } 
+}                    
+                else{
+                    break
+                }
+                
+            }
+            sleep, sleep3()
+            dumpinglogfunction100()
+            return
+    loop{
+        pixelsearch, px, py, 649, 458, 680, 490, 0x00ff00, 3, fast, rgb
+        if(errorlevel=1){
+            break
+        
+        }
+        pixelsearch, px, py, 242, 89, 262, 105, 0x00FF00, 3, fast, rgb
+        if(errorlevel=0){
+        tooltip, "banktochop() line 371", 0, 0
+            movemouse(brazierx(), braziery())
+            sleep, sleep3()
+            click
+            idlewalk()
+            sleep, sleep3()
+            dumpinglogfunction100()
+            pixelsearch, px, py, 254, 153, 290, 196, 0x00FF00
+            if(errorlevel=0){
+                dumpinglogs()
+                break
+                }
+        }
+        
+        pixelsearch, px, py, 242, 89, 262, 105, 0xFF0000, 3, fast, rgb
+        if(errorlevel=0){
+            tooltip, "dumplogs() line 387", 0, 0
+            movemouse(brazierx(), braziery())
+            sleep, sleep3()
+            click
+            sleep, sleep8()
+            dumpinglogfunction100()
+            break
+        }
+          
+        
+}
+return
+}
+dumpinglogfunction100(){
+    loop{
+    tooltip, "dumpinglogfunction100() line 402", 0, 0
+        pixelsearch, px, py, 254, 153, 290, 196, 0x00FF00, 3, fast, rgb ;after the move to the brazier after trying to relight it
+            if(errorlevel=0){
+                
+                dumpinglogs()
+                break 
+                
+            }
+            else{
+                sleep, sleep3() ;this is what is causing the messup, its getting stuck in this loop
+                }
+        }  
+}
+openbank(){
+    tooltip, "openbank() line 416", 0, 0
+    pixelsearch, px, py, 368, 117, 392, 140, 0xCA9B0C, 3, fast, rgb
+    if(errorlevel=1){   
+        loop{
+            sleep, sleep2()
+            movemouse(bankchestx(), bankchesty())
+            sleep, sleep2()
+            click
+            sleep, sleep3()
+            sleep, sleep3()
+            pixelsearch, px, py, 368, 117, 392, 140, 0xCA9B0C, 3, fast, rgb
+            if(errorlevel=0){
+                break
+            }
+        }
+    }
+    else{
+        return
+    }
+    return
+}
+brazierx(){
+    random, x, 244, 264
+    return x
+}
+braziery(){
+    random, x, 84, 105
+    return x
+}
+brazeraftermovex(){
+    random, x, 269, 287
+    return x
+}
+brazeraftermovey(){
+    random, x, 168, 185
+    return x
+}
+dumpinglogs(){
+    ;start doing a loop of checking to see the health, and then making sure your dumping the logs
+    tooltip, "dumpinglogs() line 455", 0, 0
+    loop{
+        health()
+        pixelsearch, px, py, 649, 458, 680, 490, 0x00ff00, 3, fast, rgb
+        if(errorlevel=1){
+        break
+        }
+        sleep, sleep6()
+        pixelsearch, px, py, 749, 46, 768, 67, 0xff0000, 3, fast, rgb
+        if(errorlevel=0){
+            pixelsearch, px, py, 748, 123, 774, 149, 0x0000ff, 3, fast, rgb
+            if(errorlevel=1){
+                sleep, sleep4()
+                idlewalk()
+                sleep, sleep3()
+                    pixelsearch, px, py, 266, 168, 281, 186, 0x00ff00, 3, fast, rgb
+                    if(errorlevel=0){
+                        pixelsearch,px, py, 649, 458, 680, 490, 0x00ff00, 3, fast, rgb
+                        if(errorlevel=0){
+                            movemouse(brazeraftermovex(), brazeraftermovey())
+                            sleep, sleep3()
+                            click
+                            sleep, sleep3()
+                            }
+                        if(errorlevel=1){
+                            break
+                        }
+                        
+        }
+        else{
+                health()
+        }
+    }
+    }}
+    return
+}
+startingroom(){
+    tooltip, "startingroom() line 492", 0, 0
+    movemouse(startroomx(), startroomy()) ; move to lobby of in game wintertodt
+    sleep, sleep2()
+    click
+    sleep, sleep6()
+    idlewalk()
+    loop{
+        pixelsearch, px, py, 3, 25, 14, 40, 0xFF0000, 3, fast, rgb
+        if (errorlevel=0){
+            break
+        }
+        else{
+            sleep, sleep3()
+        }
+    }
+    
+    sleep, sleep3()
+    
+    pixelsearch,px , py, 6, 223, 522, 367, 0x0000FF, 3, fast, rgb ;
+    random, x, -10, 10
+    random, y, -10, 10
+    movemouse(px+x, py+y)
+    sleep, sleep2()
+    click
+    idlewalk()
+    sleep, sleep8()
+    movemouse(justsouthx(), justsouthy())
+    sleep, sleep3()
+    click
+    sleep, sleep3()
+    idlewalk()
+    sleep, sleep3()
+    loop{  
+        pixelsearch, px, py, 260, 113, 521, 372, 0x00FF00, 3, fast, rgb ; look for bank
+        if(errorlevel=0){
+            tooltip, "startingroom() line 527", 0, 0
+            random, x, 0, 5
+            random, y, 0, 5
+            movemouse(px+x, py+y)
+            sleep, sleep2()
+            click
+            idlewalk()
+            sleep, sleep3()
+            sleep, sleep3()
+            send {esc down}
+            sleep, sleep3()
+            send {esc up}
+            sleep, sleep3()
+            pixelsearch, px, py, 505, 40, 512, 48, 0x00ff00, 3, fast, rgb
+            if(errorlevel=0){
+                break
+            }
+            }
+        }
+        
+            loop{
+                pixelsearch, px, py, 221, 46, 310, 67, 0xFF9A1F, 3, fast, rgb ;check to see if it missclicked the poll booth from the doors
+                if(errorlevel=0){
+                    pixelsearch, px, py, 131, 228, 149, 245, 0x0C11D6, 3, fast, rgb
+                    if(errorlevel=1){
+                        tooltip, "startingroom() line 552", 0, 0
+                        sleep, sleep3()
+                        send {esc down}
+                        sleep, sleep2()
+                        send {esc up}
+                        sleep, sleep3()
+                        movemouse(chestfrompollx(), chestfrompolly())
+                        sleep, sleep3()
+                        click
+                        idlewalk()
+                        sleep, sleep3()
+                        send {esc down}
+                        sleep, sleep2()
+                        send {esc up}
+                        sleep, sleep2()
+                        pixelsearch, px, py, 179, 226, 200, 248, 0xCD9D0C, 3, fast, rgb ;checks to make sure banking interface is open
+                        if(errorlevel=0){
+                            break
+                        }
+                }
+                }
+                pixelsearch, px, py, 264, 200, 266, 202, 0xFFFF00, 3, fast, rgb
+                if(errorlevel=1){
+                    tooltip, "startingroom() line 575", 0, 0
+                    pixelsearch, px, py, 241, 172, 294, 234, 0xFFFF00, 3, fast, rgb
+                    sleep, sleep3()
+                    movemouse(px, py)
+                    sleep, sleep3()
+                    click
+                    idlewalk()
+                    sleep, sleep3()
+                    pixelsearch, px, py, 264, 200, 266, 202, 0xFFFF00, 3, fast, rgb
+                    if(errorlevel=0){
+                        openbank()
+                        sleep, sleep3()
+                        pixelsearch, px, py, 261, 197, 270, 205, 0xFFFF00, 3, fast, rgb ; make sure its on the tile next to the bank
+                        if(errorlevel=0){
+                            sleep, sleep3()
+                            
+                            sleep, sleep3()
+                        }
+                    
+                }}
+                pixelsearch, px, py, 261, 197, 270, 205, 0xFFFF00, 3, fast, rgb ; make sure its on the tile next to the bank
+                if(errorlevel=0){
+                    tooltip, "startingroom() line 597", 0, 0
+                    sleep, sleep3()
+                    didntpickuprandomitems()
+                    sleep, sleep3()
+                    return
+                }
+                
+                
+                loop{
+                pixelsearch, px, py, 128, 223, 154, 250, 0x0B10D7, 3, fast, rgb ;checks again to make sure banking interface is open
+                if(errorlevel=0){
+                    i:=0
+                        pixelsearch, px, py, 563, 238, 729, 496, 0x0000FF, 3, fast, rgb ;crate in inventory
+                        if(errorlevel=0){
+                            tooltip, "startingroom() line 611", 0, 0
+                            pixelsearch, px, py, 558, 235, 733, 494, 0x0000FF, 3, fast, rgb 
+                            random, x,-5, 5
+                            random, y,-5, 5
+                            sleep, sleep2()
+                            movemouse(px+x, py+y)
+                            sleep, sleep2()
+                            click
+                            sleep, sleep3()
+                        }
+                        pixelsearch, px, py, 577, 252, 591, 265, 0xFFE700, 3, fast, rgb ;taking out jugs of wine
+                        if(errorlevel=0){
+                            pixelsearch, px, py, 617, 250, 632, 266, 0xFFE700, 3, fast, rgb ;taking out jugs of wine
+                            if(errorlevel=0){
+                                pixelsearch, px, py, 659, 251, 674, 265, 0xFFE700, 3, fast, rgb ;taking out jugs of wine
+                                if(errorlevel=0){
+                                    pixelsearch, px, py, 700, 249, 716, 266, 0xFFE700, 3, fast, rgb ;taking out jugs of wine
+                                    if(errorlevel=0){
+                                        tooltip, "startingroom() line 629", 0, 0
+                                        sleep, sleep3()
+                                        send {esc down}
+                                        sleep, sleep2()
+                                        send {esc up}
+                                        break 
+                                    }
+                                }
+                                else{
+                                    grabwine()
+                                }
+                            }
+                            else{
+                                grabwine()
+                            }
+                        }
+                        else{
+                            grabwine()
+                        }
+                        
+                    }
+                    else{
+                        sleep, sleep6()
+                    }
+                sleep, sleep3()
+                send {esc down}
+                sleep, sleep2()
+                send {esc up}
+                break
+        }
+            }
+            
+            
+        
+    return
+}
+grabwine(){
+    tooltip, "grabwine() line 666", 0, 0
+    sleep, sleep2()
+    movemouse(wineinbankx(), wineinbanky())
+    sleep, sleep2()
+    click
+    sleep, sleep4()
+    sleep, sleep3()
+}
+idlewalk(){
+    ;just check everytime it does movement
+    tooltip, "idlewalk() line 676", 0, 0
+    sleep, sleep4()
+    loop{
+        pixelsearch, px, py, 750, 148, 771, 163, 0xFA00FF, 3, fast, rgb
+        if(errorlevel=0){
+            sleep, sleep3()
+            break
+        }
+        else{
+            sleep, sleep3()
+        }
+    }
+    return
+}
+didntpickuprandomitems(){
+    ;first inventory spot
+    tooltip, "didntpickuprandomitems() line 692", 0, 0
+    crateininv()
+    pixelsearch, px, py, 579, 253, 588, 264, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 579, 253, 588, 264, 0x494035, 3, fast, rgb
+        if(errorlevel=0){
+                openbank()
+                grabwine()
+                send {esc down}
+                sleep, sleep2()
+                send {esc up}
+        }
+        else{
+            movemouse(col1(), row1())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+            openbank()
+            grabwine()
+            send {esc down}
+            sleep, sleep2()
+            send {esc up}
+        }
+    }
+    ;first column second row
+    pixelsearch, px, py, 580, 289, 590, 300, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 580, 289, 590, 300, 0x494035, 3, fast, rgb
+        if(errorlevel=1){
+            movemouse(col1(), row2())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+        }
+    }
+    ;second column first slot
+    pixelsearch, px, py, 622, 255, 629, 262, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 622, 255, 629, 262, 0x494035, 3, fast, rgb
+        if(errorlevel=0){
+                openbank()
+                sleep, sleep3()
+                grabwine()
+                sleep, sleep3()
+                send {esc down}
+                sleep, sleep2()
+                send {esc up}
+        }
+        else{
+            movemouse(col2(), row1())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+            openbank()
+            grabwine()
+            sleep, sleep3()
+            send {esc down}
+            sleep, sleep2()
+            send {esc up}
+        }
+    }
+    ;second column second row
+    pixelsearch, px, py, 621, 289, 634, 301, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 621, 289, 634, 301, 0x494035, 3, fast, rgb
+        if(errorlevel=1){
+            movemouse(col2(), row2())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+        }
+    }
+    ;third column first row
+    pixelsearch, px, py, 664, 253, 671, 262, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 664, 253, 671, 262, 0x494035, 3, fast, rgb
+        if(errorlevel=0){
+                openbank()
+                grabwine()
+                send {esc down}
+                sleep, sleep2()
+                send {esc up}
+        }
+        else{
+            movemouse(col3(), row1())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+            openbank()
+            grabwine()
+            sleep, sleep3()
+            send {esc down}
+            sleep, sleep2()
+            send {esc up}
+        }
+    }
+    ;third column second row
+    pixelsearch, px, py, 662, 291, 672, 299, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 662, 291, 672, 299, 0x494035, 3, fast, rgb
+        if(errorlevel=1){
+            movemouse(col3(), row2())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+        }
+    }
+    ;fourth column first row
+    pixelsearch, px, py, 705, 254, 714, 263, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 705, 254, 714, 263, 0x494035, 3, fast, rgb
+        if(errorlevel=0){
+                openbank()
+                sleep, sleep3()
+                grabwine()
+                sleep, sleep3()
+                send {esc down}
+                sleep, sleep2()
+                send {esc up}
+        }
+        else{
+            movemouse(col4(), row1())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+            openbank()
+            grabwine()
+            send {esc down}
+            sleep, sleep2()
+            send {esc up}
+        }
+    }
+    ;fourth column second row
+    pixelsearch, px, py, 705, 292, 713, 299, 0xFFE700, 3, fast, rgb
+    if(errorlevel=1){
+        pixelsearch, px, py, 705, 292, 713, 299, 0x494035, 3, fast, rgb
+        if(errorlevel=1){
+            movemouse(col4(), row2())
+            sleep, sleep2()
+            send {shift down}
+            sleep, sleep2()
+            click
+            sleep, sleep2()
+            send {shift up}
+            sleep, sleep2()
+        }
+    }
+    return
+}
+waittillnextgame(){
+    tooltip, "waittillnextgame() line 870", 0, 0
+    loop{
+        pixelsearch, px, py, 2, 26, 11, 39, 0xff0000, 3, fast, rgb
+        if(errorlevel=0){
+            sleep, sleep3()
+        }
+        pixelsearch, px, py, 2, 26, 11, 39, 0x00FF00, 3, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        else{
+            sleep, sleep3()
+        }
+    }
+    return
+}
+crateininv(){
+    tooltip, "Crateininv() line 887", 0, 0
+    sleep, sleep3()
+    pixelsearch, px, py, 562, 238, 731, 494, 0x0000ff, 3, fast, rgb
+    if(errorlevel=0){
+        openbank()
+        sleep, sleep3()
+        pixelsearch, px, py, 562, 238, 731, 494, 0x0000ff, 3, fast, rgb
+        sleep, sleep2()
+        random, x, -5, 5
+        random, y, -5, 5
+        movemouse(px+y, py+y)
+        sleep, sleep4()
+        click
+        sleep, sleep4()
+        send {esc down}
+        sleep, sleep2()
+        send {esc up}
+        sleep, sleep3()
+    }
+    else{
+        return
+    }
+    return
+}
+logcol1row7x(){
+    random, x, 614, 632
+    return x
+}
+logcol1row7y(){
+    random, x, 467, 485
+    return x
+}
+knifex(){
+    random, x, 615, 633
+    return x
+}
+knifey(){
+    random, x, 465, 487
+    return x
+}
+doorinsidex(){
+    random, x, 
+    return x
+}
+doorinsidey(){
+    random, x, 342, 358
+    return x
+}
+startroomx(){
+    random, x, 340, 380
+    return x
+}
+startroomy(){
+    random, x, 350, 361
+    return x
+}
+wineinbankx(){
+    random, x, 419, 438
+    return x
+}
+wineinbanky(){
+    random, x, 115, 140
+    return x
+}
+bankchestx(){
+    random, x, 274, 281
+    return x
+}
+bankchesty(){
+    random, x, 197, 202
+    return x
+}
+chestfrompollx(){
+    random, x, 283, 289
+    return x
+}
+chestfrompolly(){
+    random, x, 207, 213
+    return x
+}
+backtobranchx(){
+    random, x, 280, 293
+    return x
+}
+backtobranchy(){
+    random, x,281, 293
+    return x
+}
+brumax(){
+    random, x, 242, 255
+    return x
+}
+brumay(){
+    random, x, 192, 207
+    return x
+}
+doorsx(){
+    random, x, 245, 284
+    return x
+}
+doorsy(){
+    random, x, 33, 80
+    return x
+}
+goingtodoorsx(){
+    random, x, 127, 165
+    return x
+}
+goingtodoorsy(){
+    random, x, 41, 77
+    return x
+}
+closertodoorsx(){
+    random, x, 156, 164
+    return x
+}
+closertodoorsy(){
+    random, x, 70, 80
+    return x
+}
+closertodoors2x(){
+    random, x, 256, 268
+    return x
+}
+closertodoors2y(){
+    random, x, 115, 118
+    return x
+}
+clickdoorsx(){
+    random, x, 210, 330
+    return x
+}
+clickdoorsy(){
+    random, x, 125, 181
+    return x
+}
+justsouthx(){
+    random, x, 260, 281
+    return x
+}
+justsouthy(){
+    random, x, 259, 284
+    return x
+}
+offscreenx(){
+    random, x, 782, 797
+    return x
+}
+offscreeny(){
+    random, x, 76, 394
+    return x
+}
