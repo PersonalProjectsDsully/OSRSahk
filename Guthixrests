@@ -1,0 +1,360 @@
+
+RandomNormal(ByRef X, ByRef Y, Dev:=1)
+{
+    Loop 
+    {
+        Random, X, -1.0, 1.0
+        Random, Y, -1.0, 1.0
+        W := X ** 2 + Y ** 2
+	} Until w < 1
+
+	W := Sqrt((-2 * Log(W)) / W)
+	sX := Dev * X * W
+	Y := Dev * Y * W
+	return
+}
+RandomNormalLimit(ByRef X, ByRef Y, Dev:=1, Limit := 0, LimitType := "")
+{
+	Repeat:
+	RandomNormal(X, Y, Dev)
+	X := Round(X, 0), Y := Round(Y, 0)
+	if (LimitType ~= "i)R" and Sqrt(X**2 + Y**2) > Limit and Limit > 0) ; Limit to Radius
+		goto Repeat
+	else if ((Abs(X) > Limit or Abs(Y) > Limit) and Limit > 0)
+		goto Repeat
+    return
+}
+
+#include C:\Users\your user here\Desktop\AHK\WindHumanMouse.ahk
+#include C:\Users\your user here\Desktop\de\RandomBezier.ahk
+a::
+loop{
+clean()
+bankopen()
+}
+s::exitapp
+bankopen(){
+	RandomBezierdrop(0,0,bankx(), banky(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+	sleep, sleep2
+	bankopen1()
+	
+    sleep, sleep2()
+    click
+	sleep, sleep2
+	return
+}
+bankopen1(){
+
+	loop{
+		pixelsearch, px, py, 221, 36, 331, 67, 0xFF9A1F, 3, fast, rgb
+		if(errorlevel=0){
+			sleep, sleep2()
+			}
+		else{
+			break
+			}
+	}
+	return
+}
+clean(){
+	sleep, sleep2()
+	RandomBezierdrop(0,0,col1(), row1(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+	sleep, sleep2()
+	RandomBezierdrop(0,0,bankbowlx(), bankbowly(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+	sleep, sleep2()
+	sleep, sleep2()
+	RandomBezierdrop(0,0,col1(), row2(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+	sleep, sleep2()
+	RandomBezierdrop(0,0,bankherb1x(), bankherb1y(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+	sleep, sleep2()
+	send {esc down}
+	sleep, 50
+	send {esc up}
+	sleep, 300
+	bankclose()
+    RandomBezierdrop(0,0,col1(), row1(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+	RandomBezierdrop(0,0,col1(), row2(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    RandomBezierdrop(0,0,col1(), row3(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+	
+    RandomBezierdrop(0,0,col1(), row4(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+   
+    RandomBezierdrop(0,0,col1(), row5(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+    RandomBezierdrop(0,0,col1(), row6(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+    RandomBezierdrop(0,0,col1(), row7(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+    RandomBezierdrop(0,0,col2(), row7(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+	
+    RandomBezierdrop(0,0,col2(), row6(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+
+	
+    RandomBezierdrop(0,0,col2(), row5(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+    RandomBezierdrop(0,0,col2(), row4(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+	
+    RandomBezierdrop(0,0,col2(), row3(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+
+
+	
+    RandomBezierdrop(0,0,col2(), row2(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+
+    RandomBezierdrop(0,0,col2(), row1(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    
+
+
+    RandomBezierdrop(0,0,col3(), row1(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+ 
+
+    RandomBezierdrop(0,0,col3(), row2(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+  
+
+	
+    RandomBezierdrop(0,0,col3(), row3(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+ 
+
+
+    RandomBezierdrop(0,0,col3(), row4(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+ 
+
+    RandomBezierdrop(0,0,col3(), row5(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+
+
+    RandomBezierdrop(0,0,col3(), row6(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+
+
+
+    RandomBezierdrop(0,0,col3(), row7(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+  
+
+
+    RandomBezierdrop(0,0,col4(), row7(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+
+    RandomBezierdrop(0,0,col4(), row6(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+
+    RandomBezierdrop(0,0,col4(), row5(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    sleep, sleep2()
+
+
+    RandomBezierdrop(0,0,col4(), row4(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+   
+
+    RandomBezierdrop(0,0,col4(), row3(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    sleep, sleep2()
+
+    RandomBezierdrop(0,0,col4(), row2(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+   
+    RandomBezierdrop(0,0,col4(), row1(), "T" RandT "RO")
+    sleep, sleep2()
+    click
+    sleep, sleep2()
+
+    return
+}
+bankclose(){
+	loop{
+		pixelsearch, px, py, 221, 36, 331, 67, 0xFF9A1F, 3, fast, rgb
+		if(errorlevel=0){
+			sleep, sleep2()
+			}
+		else{
+			break
+			}
+	}
+	return
+}
+
+bankherb1x(){
+	RandomNormalLimit(X, Y, 50, 12, "R")
+    X+=138
+    Y+=138
+    return X
+}
+bankherb1y(){
+	RandomNormalLimit(X, Y, 50, 12, "R")
+    X+=126
+    Y+=126
+    return X
+}
+bankbowlx(){
+	RandomNormalLimit(X, Y, 50, 12, "R")
+    X+=92
+    Y+=92
+    return X
+}
+bankbowly(){
+	RandomNormalLimit(X, Y, 50, 12, "R")
+    X+=129
+    Y+=129
+    return X
+}
+sleep1(){
+    random, x, 600, 1000
+    return x
+}
+
+sleep2(){
+    random, x, 300, 350
+    return x
+}
+col1(){
+    RandomNormalLimit(X, Y, 50, 12, "R")
+    X+=582
+    Y+=582
+    return X
+}
+col2(){
+    RandomNormalLimit(X, Y, 50, 13, "R")
+    X+=625
+    Y+=625
+    return X
+}
+col3(){
+    RandomNormalLimit(X, Y, 50, 14, "R")
+    X+=666
+    Y+=666
+    return X
+}
+col4(){
+    RandomNormalLimit(X, Y, 50, 14, "R")
+    X+=707
+    Y+=707
+    return X
+}
+row1(){
+    RandomNormalLimit(X, Y, 50, 11, "R")
+    X+=257
+    Y+=257
+    return X
+}
+row2(){
+    RandomNormalLimit(X, Y, 50, 10, "R")
+    X+=294
+    Y+=294
+    return X
+}
+row3(){
+    RandomNormalLimit(X, Y, 50, 10, "R")
+    X+=330
+    Y+=330
+    return X
+}
+row4(){
+    RandomNormalLimit(X, Y, 50, 10, "R")
+    X+=367
+    Y+=367
+    return X
+}
+row5(){
+    RandomNormalLimit(X, Y, 50, 11, "R")
+    X+=402
+    Y+=402
+    return X
+}
+row6(){
+    RandomNormalLimit(X, Y, 50, 10, "R")
+    X+=438
+    Y+=438
+    return X
+}
+row7(){
+    RandomNormalLimit(X, Y, 50, 9, "R")
+    X+=473
+    Y+=473
+    return X
+
+}
+depositx(){
+	RandomNormalLimit(X, Y, 50, 9, "R")
+    X+=447
+    Y+=447
+    return X
+}
+deposity(){
+	RandomNormalLimit(X, Y, 50, 9, "R")
+    X+=340
+    Y+=340
+    return X
+}
+bankx(){
+	RandomNormalLimit(X, Y, 50, 9, "R")
+    X+=259
+    Y+=259
+    return X
+}
+banky(){
+	RandomNormalLimit(X, Y, 50, 9, "R")
+    X+=252
+    Y+=252
+    return X
+}
