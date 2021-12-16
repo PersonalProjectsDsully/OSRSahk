@@ -1,0 +1,138 @@
+#include C:\Users\yours\Desktop\AHK\WindHumanMouse.ahk
+#include C:\Users\yours\Desktop\de\RandomBezier.ahk
+#SingleInstance
+SetMouseDelay -1
+1::
+clickrunes()
+movemouse(firex(), firey())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+movemouse(earthx(), earthy())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+movemouse(airx(), airy())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+movemouse(mindx(), mindy())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+movemouse(bodyx(), bodyy())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+movemouse(lawx(), lawy())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+movemouse(chaosx(), chaosy())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+movemouse(deathx(), deathy())
+sleep, sleep2()
+Click
+sleep, sleep2()
+clickrunes()
+
+2::exitapp
+sleep1(){
+    random, x, 1000, 1200
+    return x
+}
+sleep2(){
+    random, x, 150, 350
+    return x
+}
+firex(){
+    random, x, 31, 50
+    return x
+}
+firey(){
+    random, x, 138, 158
+    return x
+}
+earthx(){
+    random, x, 71, 88
+    return x
+}
+earthy(){
+    random, x, 138, 158
+    return x
+}
+airx(){
+    random, x, 31, 50
+    return x
+}
+airy(){
+    random, x, 177, 197
+    return x
+}
+mindx(){
+    random, x, 67, 88
+    return x
+}
+mindy(){
+    random, x, 175, 197
+    return x
+}
+bodyx(){
+    random, x, 31, 50
+    return x
+}
+bodyy(){
+    random, x, 214, 234
+    return x
+}
+lawx(){
+    random, x, 67, 88
+    return x
+}
+lawy(){
+    random, x, 214, 234
+    return x
+}
+chaosx(){
+    random, x, 31, 50
+    return x
+}
+chaosy(){
+    random, x, 248, 271
+    return x
+}
+deathx(){
+    random, x, 67, 88
+    return x
+}
+deathy(){
+    random, x, 248, 271
+    return x
+}
+clickrunes(){
+    loop{
+    PixelSearch, varx, vary, 105, 38, 469, 363, 0x00FF00, 10, fast, rgb
+    if(ErrorLevel=0){
+        random, x, 5, 10
+        random, y, 5, 10
+        movemouse(varx+x, vary+y)
+        sleep, sleep2()
+        click
+        sleep, sleep2()
+
+    }
+    else{
+        break
+    }
+}
+return
+}
