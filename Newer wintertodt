@@ -1,0 +1,193 @@
+;budget wintertodt script
+#include C:\Users\Your username here\Desktop\functions.ahk
+#include C:\Users\Your username here\Desktop\de\WindHumanMouse.ahk
+
+1::
+loop{
+    
+    while(ifgameisactive()=True){
+        sleep, sleep1()
+        tooltip, game is inactive, 0, 0x
+    }
+    while(ifgameisactive()=False){
+        ;if started start woodcutting
+        ;if inventory is full fletch
+        ;if inventory is empty repeat just go by if no xp drop in the past 5 seconds click the brazier again also should be used with the other functions for woodcutting and fletching
+        ;0x096C02 fletching xp color
+        ;0x096C02 woodcutting xp color allegedly
+        ;xp region
+        ;0x001590 brazier color
+        ;for breaking for xp drops just do a bunch of i++ in a loop and w
+        pixelsearch, px, py, 5, 25, 11, 34, 0xff0000, 0, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        woodcutt()
+        pixelsearch, px, py, 5, 25, 11, 34, 0xff0000, 0, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        
+        iffullfletch()
+        pixelsearch, px, py, 5, 25, 11, 34, 0xff0000, 0, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        ifdonedump()
+        pixelsearch, px, py, 5, 25, 11, 34, 0xff0000, 0, fast, rgb
+        if(errorlevel=0){
+            break
+        }
+        y++
+        if(y==2){
+            ToolTip , did 2 inventories 43, 0, 0
+            pixelsearch, px, py, 5, 25, 11, 34, 0xff0000, 0, fast, rgb
+            y==0
+            if(errorlevel=1){
+                loop{
+                    pixelsearch, px, py, 5, 25, 11, 34, 0xff0000, 0, fast, rgb
+                    if(errorlevel=0){
+                        break 2
+                    }
+                    else{
+                        sleep, sleep1()
+                    }
+                }
+            }
+        }
+    }
+}
+2::Pause
+3::exitapp
+woodcutt(){
+    ToolTip , woodcutt line 30, 0, 0
+    loop{
+        pixelsearch, px, py, 4, 29, 524, 371, 0xff00ff, 0, fast, rgb
+        if(errorlevel=0){
+            sleep, sleep1()
+            random, x, 0, 5
+            random, y, 10, 15
+            movemouse(px+x, py+y)
+            sleep, sleep1()
+            Click
+            sleep, sleep1()
+            ; add a check in here checking for the xp drops
+            loop{
+                pixelsearch, px, py, 697, 456, 722, 494, 0xff0000, 0, fast, RGB
+                if(errorlevel=0){
+                    sleep, 1000
+                    sleep, sleep1()
+                    break 2
+                }
+                else{
+                    sleep, sleep1()
+                }
+            }
+        }
+    }
+    return
+}
+iffullfletch(){
+    ToolTip , isfullfletch line 51, 0, 0
+    loop{
+        PixelSearch, px, py, 697, 456, 722, 494, 0xff0000, 0, fast, RGB ;so this is just looking for the log in the last inventory spot
+        if(errorlevel=0){
+            sleep, sleep1()
+            movemouse(col4(), row7())
+            sleep, sleep1()
+            click
+            sleep, sleep1() ;start fletching the logs from the last inventory spot
+            loop{
+                PixelSearch, px, py, 691, 457, 726, 488, 0x00ff00, 3, fast, RGB
+                if(errorlevel=0){
+                    sleep, 500
+                    sleep, sleep1()
+                    break 2
+                }
+                else{
+                    sleep, sleep1()
+                }
+            }
+        }
+    }
+    return    
+}
+
+ifdonedump(){
+    ToolTip , ifdonedump line 115, 0, 0
+    loop{
+        PixelSearch, px, py, 6, 29, 525, 368, 0x001590, 0, fast, RGB
+        if(errorlevel=0){
+            loop{
+                PixelSearch, px, py, 6, 29, 525, 368, 0xE7FF00, 5, fast, RGB
+                if(errorlevel=0){
+                    break
+                }
+                else{
+                    sleep, sleep1()
+                }
+            }
+            PixelSearch, px, py, 10, 109, 517, 287, 0xE7FF00, 10, fast, RGB
+            sleep, sleep1()
+            random, x, -3, 3
+            random, y, -3, 3
+            movemouse(px+x, py+y)
+            sleep, sleep1()
+            click
+            sleep, sleep1()
+            ;loop to start dumping fletched bullshit
+            loop{
+                pixelsearch, px, py, 475, 68, 521, 229,0xB33903, 3, fast, RGB
+                if(errorlevel=0){
+                    loop{
+                        i=0
+                        PixelSearch, px, py,  691, 457, 726, 488, 0x00ff00, 3, fast, rgb
+                        if(errorlevel=1){
+                            sleep, 600
+                            sleep, sleep1()
+                            
+                            break 3
+                        }
+                        else{
+                            sleep, sleep1()
+                        }
+                    }
+                }
+                if(i==5){
+                    i==0
+                    break
+                }
+                else{
+                    sleep, sleep1()
+                    sleep, sleep1()
+                    i++
+                }
+            }
+            sleep, 3000
+        }
+    }
+    return
+}
+ifgameisactive(){
+    loop{
+        PixelSearch, px, py, 0, 25, 16, 38, 0xff0000, 3, fast, RGB
+        if(errorlevel=0){
+            ;gameisinactive
+            x==0
+            return True
+            break
+        }
+        sleep, 50
+        PixelSearch, px, py, 0, 25, 16, 38, 0x00ff00, 3, fast, RGB
+        if(errorlevel=0){
+            ;gameisactive
+            x==1
+            return False
+            break
+        }
+        else{
+            sleep, sleep1()
+        }
+    }
+    return x
+}
